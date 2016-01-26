@@ -9764,15 +9764,12 @@ button.intro {
   font-weight: 800;
   background-color: white;
   border-radius: 8px;
-  padding: 10px 15px;
-  border: none;
-  text-align: center; }
+  padding: 5px 10px;
+  border: none; }
 
 .ion-ios-cart-outline {
-  font-size: 10em;
-  color: white;
-  display: block;
-  margin-left: 30%; }
+  font-size: 12em;
+  color: white; }
 
 img.product-image {
   max-width: 60px;
@@ -9785,7 +9782,7 @@ img.product-image-detail {
 
 h1.logo-text {
   font-family: 'Righteous','Arial',sans-serif;
-  font-size: 5.5em;
+  font-size: 5em;
   font-weight: 500;
   color: #1D647A;
   text-align: center; }
@@ -9941,54 +9938,55 @@ hr {
 ion-nav-bar .bar-positive {
   text-transform: uppercase; }
 
-.ion-android-arrow-down {
+i.ion-android-arrow-down::before {
+  width: 50px; }
+
+i.ion-android-arrow-down {
   font-size: 4em;
   color: white;
-  margin-left: 40%;
-  background-color: #1D647A;
+  background-color: #2E9FC2;
   -webkit-animation: flash 2s ease-out;
   -moz-animation: flash 2s ease-out;
   animation: flash 2s ease-out;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  border-radius: 40px;
-  padding: 0px 20px; }
-
-ion-item {
-  white-space: normal;
-  overflow: visible; }
+  border-radius: 25px; }
 
 @-moz-keyframes ion-android-arrow-down {
   0% {
-    -moz-transform: scale(0);
+    -moz-transform: initial;
     opacity: 0.2; }
   25% {
-    -moz-transform: scale(0);
+    -moz-transform: initial;
     opacity: 0.2; }
   50% {
-    -moz-transform: scale(0.1);
+    -moz-transform: initial;
     opacity: 0.5; }
   75% {
-    -moz-transform: scale(0.5);
+    -moz-transform: initial;
     opacity: 0.8; }
   100% {
-    -moz-transform: scale(1);
+    -moz-transform: initial;
     opacity: 0.2; } }
 
 @-webkit-keyframes "flash" {
   0% {
-    -webkit-transform: scale(0);
+    -webkit-transform: initial;
     opacity: 0.2; }
   25% {
-    -webkit-transform: scale(0);
+    -webkit-transform: initial;
     opacity: 0.2; }
   50% {
-    -webkit-transform: scale(0.1);
+    -webkit-transform: initial;
     opacity: 0.5; }
   75% {
-    -webkit-transform: scale(0.5);
+    -webkit-transform: initial;
     opacity: 0.8; }
   100% {
-    -webkit-transform: scale(1);
+    -webkit-transform: initial;
     opacity: 0.2; } }
+
+div .container > a, div .container > i {
+  display: block;
+  text-align: center; }

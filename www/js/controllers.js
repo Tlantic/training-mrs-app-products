@@ -101,8 +101,8 @@ angular.module('product.controllers', [])
       $cordovaSocialSharing.shareViaTwitter(prodetail.name, prodetail.image)
         .then(function (result) {
 
-        }, function (error) {
-
+        }, function (err) {
+            alert('Por favor instalar a Aplicação Twitter');
         });
     };
 
@@ -111,7 +111,7 @@ angular.module('product.controllers', [])
         .then(function (result) {
           // Success!
         }, function (err) {
-          alert('Não foi possível partilhar!')
+          alert('Por favor instalar a Aplicação Facebook');
         });
     }
 
