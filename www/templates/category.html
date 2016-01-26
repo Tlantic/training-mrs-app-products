@@ -1,0 +1,9 @@
+<ion-view view-title="Categorias de Produtos">
+  <ion-content>
+    <ion-list ng-controller="CategoryCtrl as categories">
+      <ion-item class="category-list" href="#/products/{{item.id}}" ng-repeat="item in cat">
+        <h3 class="category-name"><i class="ion-android-send"></i> {{item.name}}</h3>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

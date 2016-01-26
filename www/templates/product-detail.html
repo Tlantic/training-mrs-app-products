@@ -1,0 +1,55 @@
+<ion-view view-title="Produto">
+  <ion-content class="product-detail-container" ng-controller="ProductDetailCtrl as prodetail">
+
+    <ion-item class="product-detail-item">
+        <div class="row row-center">
+          <div class="col">
+            <h3 class="product-detail-name">{{prodetail.name}}</h3>
+          </div>
+        </div>
+        <div class="row row-center">
+          <div class="col">
+          <img class="product-image-detail" ng-src="{{prodetail.images.hdpi}}" fallback-src="{{'img/fa-shopping-basket_320.png'}}"/>
+          </div>
+        </div>
+      <div class="">
+      <div class=""><button class="button button-clear" ng-click="modal.show()"><i class="ion-ios-plus-outline"></i></button></div>
+      </div>
+
+
+      <div class="row row-center">
+
+            <div class="col"><h4 class="product-detail-brand">{{prodetail.brand}}</h4></div>
+            <div class="col"><h5 class="product-detail-price"> {{prodetail.currency}} {{prodetail.price}}</h5></div>
+          </div>
+         <div class="row">
+           <div class="col"><h2 class="partilha">Partilhar</h2></div>
+         </div>
+  <div class="row social-icons">
+        <div class="col">
+          <button class="button button-outline button-positive ion-social-twitter" ng-click="shareViaTwitter(prodetail)"></button>
+        </div>
+    <div class="col"><ion-spinner icon="lines"></ion-spinner></div>
+  <div class="col col-20">
+        <button class="button button-outline button-positive ion-social-facebook" ng-click="shareViaFacebook(prodetail)"></button>
+  </div>
+  </div>
+
+      </ion-item>
+  </ion-content>
+
+
+  <script id="modal.html" type="text/ng-template">
+    <div class="modal">
+      <header class="bar bar-header bar-positive">
+        <h3 class="title">{{prodetail.name}}</h3>
+        <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-ios-close-empty"></span></div>
+      </header>
+      <content has-header="true" padding="true">
+        <div class="row row-center">
+          <img class="product-image-detail-modal" ng-src="{{prodetail.images.xhdpi}}" fallback-src="{{'img/fa-shopping-basket_320.png'}}"/>
+        </div>
+      </content>
+    </div>
+  </script>
+</ion-view>
