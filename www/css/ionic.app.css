@@ -9810,32 +9810,40 @@ h5.product-promo-price {
 h5.product-promo {
   color: #DD4137;
   font-weight: 600;
-  font-size: 1em;
-  text-align: center; }
+  text-transform: uppercase;
+  font-size: .8em;
+  margin-left: 23%; }
 
 p.promo-date-text {
-  text-align: center;
   color: #1D647A;
   background-color: white;
-  font-size: 1em;
+  font-size: .8em;
   font-weight: 300; }
 
 h5.product-poupa, br.product-poupa-price {
   text-align: center;
   background-color: #B08300;
   color: white;
-  font-weight: 500;
+  margin-left: 20%;
+  font-size: 0.8em;
+  font-weight: 300;
   border-radius: 100px;
   padding: 5px 0px;
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(176, 131, 0, 0.4);
+  -moz-box-shadow: 1px 1px 5px 2px rgba(176, 131, 0, 0.4);
+  box-shadow: 1px 1px 5px 2px rgba(176, 131, 0, 0.4);
   text-transform: uppercase; }
 
 h5.product-price-promo {
   text-align: center;
-  color: white;
-  font-size: 1em;
-  background-color: #1D647A;
+  color: #1D647A;
+  margin-left: 20%;
+  align-content: center;
+  font-size: 0.9em;
+  background-color: white;
   border-radius: 250px;
-  padding: 5px 10px; }
+  padding: 5px 10px;
+  border: 1px double #1D647A; }
 
 h4.product-detail-brand {
   font-size: 1.1em;
@@ -9897,7 +9905,7 @@ img.product-image-detail-modal {
   margin-top: 20%; }
 
 img.product-image-promo {
-  max-width: 80px;
+  max-width: 100px;
   align-content: center; }
 
 .row.social-icons {

@@ -3,31 +3,21 @@
     </ion-list>
     <ion-item class="item-text-wrap" ng-repeat="item in promo">
 
-      <div class="row">
-        <div class="col col-15"><img class="product-image-promo" ng-src="{{item.image}}" fallback-src="{{'img/fa-shopping-basket_320.png'}}"/></div>
-        <div class="col"><h3 class="product-name-promo">{{item.name}}</h3></div><hr>
-        <div class="col col-15"><h4 class="product-brand">{{item.brand}} | {{item.currency}} {{item.price}}</h4></div>
-      </div>
-      <div class="row">
-
-
-      </div>
+      <div class="row row-center">
+        <div class="col col-35">
+          <img class="product-image-promo" ng-src="{{item.image}}" fallback-src="{{'img/fa-shopping-basket_320.png'}}"/>
+        </div>
+        <div class="col col-80">
+          <h3 class="product-name-promo">{{item.name}}</h3>
+          <h4 class="product-brand">{{item.brand}} | {{item.currency}} {{item.price}}</h4>
+          <h5 class="col-50 product-promo">Leve 4 em vez de 2</h5>
+          <h5 class="col-50 product-price-promo">4,99 cada</h5>
+          <h5 class="col-50 product-poupa">economize <br class="product-poupa-price">R$2,00</h5>
+        </div>
+        </div>
 
       <div class="row row-center">
-
-        <div class="col"><h5 class="product-promo">Leve 4 em vez de 2</h5></div>
-
-      </div>
-
-      <div class="row row-center">
-        <div class="col-50 col-offset-25"><h5 class="product-price-promo">4.99 cada</h5></div>
-      </div>
-      <div class="row">
-        <div class="col-50 col-offset-25"><h5 class="product-poupa">economize <br class="product-poupa-price">R$ 2.00</h5></div>
-      </div>
-
-      <div class="row">
-        <div class="col promo-date">
+        <div class="col col-offset-33">
           <p class="promo-date-text">De 26 a 31 de Janeiro</p>
         </div>
       </div>
