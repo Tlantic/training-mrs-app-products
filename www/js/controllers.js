@@ -63,7 +63,6 @@ angular.module('product.controllers', [])
 
           from += 10;
 
-
           for (var i = 0; i < response.data.result.length; i++) {
             products.push({
               name: response.data.result[i].name,
