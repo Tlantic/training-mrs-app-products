@@ -33,11 +33,11 @@ angular.module('product', ['ngCordova', 'dcbImgFallback', 'ionic', 'product.cont
     })
 
   .state('products', {
-    url: '/products/:id',
+    url: '/products/{id}',
     templateUrl: 'templates/products.html'
   })
   .state('product-detail', {
-    url: '/product-detail/:id',
+    url: '/product-detail/{id}',
     templateUrl: 'templates/product-detail.html'
   })
 

@@ -1,8 +1,8 @@
 <ion-view view-title="Produtos Disponíveis">
-  <ion-content ng-controller="ProductCtrl as product">
+  <ion-content overflow-scroll="false" ng-controller="ProductCtrl as product">
     <ion-list>
 
-      <ion-item class="item-text-wrap" ng-repeat="prod in pro" href="#/product-detail/{{prod.id}}">
+      <ion-item class="item-text-wrap" ng-repeat="prod in pro" ui-sref="product-detail({id: prod.id})">
 
         <div class="row row-center">
           <div class="col col-25">

@@ -54,15 +54,15 @@ angular.module('product.controllers', [])
     var from = 0;
     var products = [];
     $scope.noMoreItemsAvailable = false;
-    $ionicLoading.show({template: 'Carregando...'});
+
 
     $scope.loadMore = function () {
-
+      $ionicLoading.show({template: 'Carregando...'});
       $http.get('http://52.17.194.187/orgs/monteserrat/apps/customer/hierarchicalstructure/' + $stateParams.id + '/products?adapter=customer-adapter&from=' + from + '&size=10')
         .then(function (response) {
 
           from += 10;
-          $scope.$broadcast('scroll.infiniteScrollComplete');
+
 
           for (var i = 0; i < response.data.result.length; i++) {
             products.push({
@@ -82,6 +82,7 @@ angular.module('product.controllers', [])
           }
 
           $scope.pro = products;
+          $scope.$broadcast('scroll.infiniteScrollComplete');
           $ionicLoading.hide();
         });
     };
