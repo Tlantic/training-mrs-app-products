@@ -1,20 +1,4 @@
 @charset "UTF-8";
-/*
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
-
-For example, you might change some of the default colors:
-
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -9731,16 +9715,37 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.welcome-text, .logo-text {
-  text-align: center; }
+h1, h2, h3, h4, h5 {
+  font-family: "Source Sans Pro", Verdana, sans-serif; }
 
-.welcome-text {
+img {
+  align-content: center;
+  display: block;
+  margin: 0 auto; }
+  img.product-image {
+    max-width: 60px; }
+  img.product-image-detail {
+    max-width: 250px; }
+  img.product-image-detail-modal {
+    max-width: 300px;
+    margin-top: 100px; }
+  img.product-image-promo {
+    max-width: 100px; }
+
+.item {
+  border: none !important; }
+
+h1.welcome-text {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 200;
+  margin-top: 20px;
+  font-size: 2.2em;
   color: white; }
 
 .pane {
   background-color: #037A67; }
 
-h4.product-brand {
+.product-brand, .bar.bar-positive .title, .product-promo, .product-poupa, .product-poupa-price, .product-detail-brand, .partilha {
   text-transform: uppercase; }
 
 ion-content .product-detail-container {
@@ -9749,67 +9754,41 @@ ion-content .product-detail-container {
 .ion-social-twitter, .ion-social-facebook {
   font-size: 1.5em; }
 
-button.intro {
-  font-family: "Source Sans Pro", Verdana, sans-serif;
+button.intro-prod, .intro-promo {
   font-size: 2em;
   color: #2E9FC2;
-  font-weight: 800;
+  font-weight: 600;
   background-color: white;
   border-radius: 8px;
   padding: 5px 10px;
+  margin-top: 10px;
   border: none; }
 
 .ion-ios-cart-outline {
   font-size: 12em;
   color: white; }
 
-img.product-image {
-  max-width: 60px;
-  align-content: center; }
-
-img.product-image-detail {
-  display: block;
-  margin: 0 auto;
-  max-width: 320px; }
-
-h1.logo-text {
+.logo-text {
   font-family: "Righteous", "Arial", sans-serif;
   font-size: 5em;
   font-weight: 500;
-  color: #1D647A;
-  text-align: center; }
+  color: #1D647A; }
 
-h3.category-name {
-  font-family: "Source Sans Pro", Verdana, sans-serif;
-  font-weight: 300;
-  font-size: 1.2em;
-  text-align: left;
-  color: #037A67; }
-
-h3.product-name-promo, h5.product-promo, p.promo-date-text, br.product-poupa-price, h5.product-promo-price, h5.product-promo, h3.product-name, h3.product-detail-name, h4.product-brand, h4.product-detail-brand, h5.product-detail-brand, h5.product-detail-price {
-  font-family: "Source Sans Pro", Verdana, sans-serif; }
-
-img.product-image-detail {
-  display: block;
-  margin: 0 auto; }
-
-h5.product-promo-price {
+.product-promo-price {
   color: black; }
 
-h5.product-promo {
+.product-promo {
   color: #DD4137;
   font-weight: 600;
-  text-transform: uppercase;
-  font-size: .8em;
-  margin-left: 23%; }
+  font-size: .8em; }
 
-p.promo-date-text {
+.promo-date-text {
   color: #1D647A;
   background-color: white;
   font-size: .8em;
   font-weight: 300; }
 
-h5.product-poupa, br.product-poupa-price {
+.product-poupa, br.product-poupa-price {
   text-align: center;
   background-color: #B08300;
   color: white;
@@ -9817,13 +9796,12 @@ h5.product-poupa, br.product-poupa-price {
   font-size: 0.8em;
   font-weight: 300;
   border-radius: 100px;
-  padding: 5px 0px;
+  padding: 5px 0;
   -webkit-box-shadow: 1px 1px 5px 2px rgba(176, 131, 0, 0.4);
   -moz-box-shadow: 1px 1px 5px 2px rgba(176, 131, 0, 0.4);
-  box-shadow: 1px 1px 5px 2px rgba(176, 131, 0, 0.4);
-  text-transform: uppercase; }
+  box-shadow: 1px 1px 5px 2px rgba(176, 131, 0, 0.4); }
 
-h5.product-price-promo {
+.product-price-promo {
   text-align: center;
   color: #1D647A;
   margin-left: 20%;
@@ -9834,87 +9812,62 @@ h5.product-price-promo {
   padding: 5px 10px;
   border: 1px double #1D647A; }
 
-h4.product-detail-brand {
-  font-size: 1.1em;
+h4 {
   font-weight: 600;
-  color: #037A67;
-  text-transform: uppercase; }
-
-h5.product-detail-price {
-  font-size: 1.2em;
-  font-weight: 600;
-  background-color: #037A67;
-  color: white; }
-
-h3.product-name {
-  font-size: 1.1em;
-  font-weight: 300;
   color: #037A67; }
+  h4.product-detail-brand {
+    font-size: 1em; }
+  h4.product-brand {
+    font-size: 0.8em; }
 
-h3.product-name-promo {
+h5 {
+  color: white;
+  background-color: #037A67; }
+  h5.product-detail-price {
+    font-size: 1.2em;
+    font-weight: 600; }
+  h5.product-price {
+    font-size: 1.2em; }
+
+h3 {
+  color: #037A67; }
+  h3.product-name {
+    font-size: 1.1em;
+    font-weight: 300; }
+  h3.product-detail-name {
+    font-size: 1.8em;
+    font-weight: 600;
+    text-align: center; }
+  h3.category-name {
+    font-size: 1.2em;
+    text-align: left;
+    font-weight: 300; }
+
+.product-name-promo {
   font-size: .8em;
   font-weight: 300;
   color: #037A67; }
 
-h3.product-detail-name {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #037A67;
-  text-align: center; }
-
-h4.product-brand {
-  font-size: 0.8em;
-  font-weight: 600;
-  color: #037A67; }
-
-h5.product-price {
-  font-size: 1em;
-  color: white;
-  background-color: #037A67; }
-
-.item {
-  border: none !important; }
-
 h2.partilha {
   background-color: #037A67;
   color: white;
-  font-family: "Source Sans Pro", Verdana, sans-serif;
   padding: 5px 0;
   font-weight: 300;
-  text-transform: uppercase;
   text-align: center; }
 
 .ion-ios-plus-outline {
   color: #037A67;
   font-size: 2.3em; }
 
-img {
-  align-content: center; }
-  img .product-image-detail-modal {
-    max-width: 350px;
-    margin-top: 20px; }
-  img .product-image-promo {
-    max-width: 100px;
-    align-content: center; }
-
 .row.social-icons {
   margin-top: 10px; }
 
-h1.welcome-text {
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 300;
-  margin-top: 10px;
-  font-size: 2.5em; }
-
-.bar.bar-positive .title {
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 300; }
-
 .bar.bar-positive {
   border-bottom: 3px solid #2E9FC2 !important; }
-
-ion-nav-bar .bar-positive {
-  text-transform: uppercase; }
+  .bar.bar-positive .title {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.1em; }
 
 i.ion-android-arrow-down::before {
   width: 50px; }
@@ -9927,13 +9880,13 @@ i.ion-android-arrow-down {
   width: 50px;
   margin-left: -25px;
   background-color: #2E9FC2;
-  -webkit-animation: flash 3s ease-out;
-  -moz-animation: flash 3s ease-out;
-  animation: flash 3s ease-out;
+  -webkit-animation: flash 2s ease-out;
+  -moz-animation: flash 2s ease-out;
+  animation: flash 2s ease-out;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  border-radius: 15px; }
+  border-radius: 25px; }
 
 hr {
   visibility: hidden;
@@ -9973,6 +9926,6 @@ hr {
     -webkit-transform: initial;
     opacity: 0.2; } }
 
-div .container > a, div > i {
+div .container > a, div > i, div > h1 {
   display: block;
   text-align: center; }
