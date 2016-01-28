@@ -72,7 +72,8 @@ angular.module('product.controllers', [])
               currency: response.data.result[i].currency,
               image: response.data.result[i].image,
               hdpi: response.data.result[i].images.hdpi,
-              xhdpi: response.data.result[i].images.xhdpi
+              xhdpi: response.data.result[i].images.xhdpi,
+              ean:response.data.result[i].ean
 
             });
           }
@@ -130,7 +131,7 @@ angular.module('product.controllers', [])
     $scope.modal = $ionicModal;
   }, {
     scope: $scope,
-    animation: 'slide-in-up'
+    animation: 'slide-in-right'
   });
 
   productDetail();

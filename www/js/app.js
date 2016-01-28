@@ -1,4 +1,4 @@
-angular.module('product', ['ngCordova', 'dcbImgFallback', 'ionic', 'product.controllers', 'product.services', 'product.directives'])
+angular.module('product', ['ngCordova', 'barcodeGenerator', 'dcbImgFallback', 'ionic', 'product.controllers', 'product.services', 'product.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
