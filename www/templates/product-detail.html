@@ -13,23 +13,19 @@
           </div>
         </div>
         <div class="row">
-          <div class="col col-50"><button class="button button-clear" ng-click="modal.show()"><i class="ion-ios-plus-outline"></i></button></div>
-          <div class="col col-50 col-offset-25"><button ng-click="issocialButton = !issocialButton" class="button button-outline ion-android-share-alt"></button></div>
+          <div class="col col-50"><button class="button ion-ios-plus-outline" ng-click="modal.show()"></button></div>
+          <div class="col col-50 col-offset-10"><button ng-click="issocialButton = !issocialButton" class="button ion-android-share-alt"></button></div>
+        </div>
+      <div class="row social" ng-show="issocialButton">
+        <div class="col col-10 col-offset-50"><button class="button button-positive ion-social-twitter" ng-click="shareViaTwitter(prodetail)"></button></div>
+        <div class="col col-90 col-offset-25"><button class="button button-positive ion-social-facebook" ng-click="shareViaFacebook(prodetail)"></button></div>
         </div>
 
-      <div class="row row-center">
-            <div class="col"><h4 class="product-detail-brand">{{prodetail.brand}}</h4></div>
-            <div class="col"><h5 class="product-detail-price"> {{prodetail.currency}} {{prodetail.price}}</h5></div>
-      </div>
-      <div class="row">
+            <div class=""><h4 class="product-detail-brand">{{prodetail.brand}}</h4></div>
+            <div class=""><h5 class="product-detail-price"> {{prodetail.currency}} {{prodetail.price}}</h5></div>
 
-      </div>
-      <div class="row" ng-show="issocialButton">
-        <div class="col">
-          <button class="button button-outline button-positive ion-social-twitter" ng-click="shareViaTwitter(prodetail)"></button>
-          <button class="button button-outline button-positive ion-social-facebook" ng-click="shareViaFacebook(prodetail)"></button>
-        </div>
-      </div>
+
+
 
         <div class="barcode" barcode-generator="{{prodetail.ean}}"></div>
         <h5 class="bar-number">{{prodetail.ean}}</h5>
