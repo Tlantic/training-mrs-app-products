@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5{
 .barcode{
   height:80px;
   text-align: center;
-  margin-top:40px;
+  margin-top:30px;
 
 }
 .item{
@@ -291,8 +291,8 @@ button.ion-android-share-alt.activated{
 }
 
   button.ion-social-twitter, button.ion-social-facebook{
-    -webkit-animation: social 400ms forwards;
-    animation: social 400ms forwards;
+    -webkit-animation: social 800ms forwards;
+    animation: social 800ms forwards;
     font-size:1.3em;
     height:42px;;
     width:42px;
@@ -330,15 +330,15 @@ button.ion-android-share-alt.activated{
 }
 
   @-webkit-keyframes social{
-    0% {-webkit-transform:translateX(-50%) translateY(-100%);}
+    0% {-webkit-transform:translateX(-40%) translateY(-100%); color:$darkblue;}
     //50%{-webkit-transform:translateY(-50%);}
-    100%{-webkit-transform:translateX(-50%) translateY(-50%);}
+    100%{-webkit-transform:translateX(-40%) translateY(-50%);color:$white;}
   }
 
   @keyframes social{
-    0% {transform:translateX(-50%) translateY(-100%);}
+    0% {transform:translateX(-40%) translateY(-100%); color:$darkblue;}
     //50%{transform:translateY(-50%);}
-    100%{transform:translateX(-50%) translateY(-50%);}
+    100%{transform:translateX(-40%) translateY(-50%); color:$white;}
   }
 
   @-webkit-keyframes plus {
