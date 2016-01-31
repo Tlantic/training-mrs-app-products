@@ -1,5 +1,8 @@
 angular.module('product', ['ngCordova', 'barcodeGenerator', 'dcbImgFallback', 'ionic', 'product.controllers', 'product.services', 'product.directives'])
-
+  .constant("myConfig", {
+    "url":"http://localhost",
+    "port":"80"
+})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
 
