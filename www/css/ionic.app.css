@@ -9936,28 +9936,20 @@ hr {
     opacity: 0.2; } }
 
 @-webkit-keyframes arrow-down_4_4 {
-  0% {
-    opacity: 0.2; }
-  25% {
+  0%, 25%, 100% {
     opacity: 0.2; }
   50% {
     opacity: 0.5; }
   75% {
-    opacity: 0.8; }
-  100% {
-    opacity: 0.2; } }
+    opacity: 0.8; } }
 
 @keyframes arrow-down_4_4 {
-  0% {
-    opacity: 0.2; }
-  25% {
+  0%, 25%, 100% {
     opacity: 0.2; }
   50% {
     opacity: 0.5; }
   75% {
-    opacity: 0.8; }
-  100% {
-    opacity: 0.2; } }
+    opacity: 0.8; } }
 
 .slide-in-right {
   -webkit-transform: translateX(100%);
@@ -10087,31 +10079,21 @@ button.ion-social-twitter, button.ion-social-facebook {
     transform: translateY(0%); } }
 
 @-webkit-keyframes logo {
-  0% {
+  0%, 25%, 75% {
     -webkit-text-stroke: 2px #59c2fe; }
-  25% {
-    -webkit-text-stroke: 2px #59c2fe; }
-  50% {
-    -webkit-text-stroke: 2px white; }
-  75% {
-    -webkit-text-stroke: 2px #59c2fe; }
-  100% {
+  50%, 100% {
     -webkit-text-stroke: 2px white; } }
 
 @-webkit-keyframes button_intro {
-  0%, 35% {
+  0%, 35%, 75%, 100% {
     -webkit-transform: rotate(0deg); }
   45%, 46% {
-    -webkit-transform: rotate(15deg); }
+    -webkit-transform: rotate(5deg); }
   55%, 56% {
-    -webkit-transform: rotate(-15deg); }
-  75%, 100% {
-    -webkit-transform: rotate(0deg); } }
+    -webkit-transform: rotate(-5deg); } }
 
 @-webkit-keyframes modal_anim {
-  0% {
+  0%, 100% {
     -webkit-transform: scale(1); }
   50% {
-    -webkit-transform: scale(2); }
-  100% {
-    -webkit-transform: scale(1); } }
+    -webkit-transform: scale(2); } }

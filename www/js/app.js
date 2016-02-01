@@ -1,8 +1,4 @@
-angular.module('product', ['ngCordova', 'barcodeGenerator', 'dcbImgFallback', 'ionic', 'product.controllers', 'product.services', 'product.directives'])
-  .constant("myConfig", {
-    "url":"http://localhost",
-    "port":"80"
-})
+angular.module('product', ['product.constants','product.controllers', 'product.services', 'product.directives','ngCordova', 'barcodeGenerator', 'dcbImgFallback', 'ionic'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
 
@@ -30,8 +26,6 @@ angular.module('product', ['ngCordova', 'barcodeGenerator', 'dcbImgFallback', 'i
 
   .state('category', {
     url: '/categories',
-    controller: 'CategoryCtrl',
-    controllerAs:'categories',
     templateUrl: 'templates/category.html'
     })
 
@@ -40,15 +34,13 @@ angular.module('product', ['ngCordova', 'barcodeGenerator', 'dcbImgFallback', 'i
     templateUrl: 'templates/products.html'
   })
   .state('product-detail', {
-    url: '/product-detail/:id<s',
+    url: '/product-detail/:id',
     templateUrl: 'templates/product-detail.html'
   })
 
   .state('promocoes', {
     url: '/promocoes',
     templateUrl: 'templates/promocoes.html',
-    controller:'PromocoesCtrl',
-    controllerAs:'promo'
   });
 
   $urlRouterProvider.otherwise('/');
