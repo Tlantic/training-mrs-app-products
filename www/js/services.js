@@ -14,12 +14,10 @@ angular.module('product.services', [])
       return deferred.promise;
     };
 
-    productService.getAllProducts = function() {
-      var from = 0;
+    productService.getAllProducts = function(from) {
       var deferred = $q.defer();
       $http.get(constants.URL_MONTESERRAT + 'hierarchicalstructure/' + $stateParams.id + '/products' + constants.ADAPTER_MONTERRAT + '&from=' + from + '&size=10')
         .success(function (response) {
-          from += 10;
           deferred.resolve(response.result);
 
         }).error(function (err) {
@@ -39,6 +37,19 @@ angular.module('product.services', [])
       });
       return deferred.promise;
     };
+
+    productService.getAllProductsDetails = function() {
+
+    var deferred = $q.defer();
+      $http.get(constants.URL_MONTESERRAT + 'products/' + $stateParams.id + constants.ADAPTER_MONTERRAT)
+      .success(function (response) {
+        deferred.resolve(response.result);
+
+      }).error(function (err) {
+      deferred.reject(err);
+    });
+    return deferred.promise;
+  };
 
     return productService;
   }]);

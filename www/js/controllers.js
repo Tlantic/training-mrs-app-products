@@ -21,14 +21,14 @@ angular.module('product.controllers', [])
 
 .controller('ProductCtrl', function ($scope, $http, $stateParams, $ionicLoading, constants, productService){
   $scope.noMoreItemsAvailable = false;
-
-  $scope.loadMore = function () {
+  var from = 0;
+  $scope.loadMore = function (){
     $ionicLoading.show({template: 'Carregando...'});
-    productService.getAllProducts().then(function(response) {
+    productService.getAllProducts(from).then(function(response) {
+      from += 10;
       if (response.length == []) {
         $scope.noMoreItemsAvailable = true;
       }
-
       $scope.pro = response;
       $scope.$broadcast('scroll.infiniteScrollComplete');
       $ionicLoading.hide();
@@ -40,19 +40,17 @@ angular.module('product.controllers', [])
   });
 })
 
-.controller('ProductDetailCtrl', function ($scope, $http, $ionicModal, $stateParams, $ionicLoading, $cordovaSocialSharing, constants) {
+.controller('ProductDetailCtrl', function ($scope, $http, $ionicModal, $stateParams, $ionicLoading, $cordovaSocialSharing, constants, productService) {
 
-  function productDetail() {
-    $ionicLoading.show({template: 'Carregando...'});
-    $http.get(constants.URL_MONTESERRAT + 'products/' + $stateParams.id + constants.ADAPTER_MONTERRAT)
-      .then(function (response) {
-      $scope.prodetail = response.data.result;
-      $ionicLoading.hide();
+  $ionicLoading.show({template: 'Carregando...'});
+    productService.getAllProductsDetails().then(function(response){
+        $scope.prodetail = response;
+        $ionicLoading.hide();
       }, function (err) {
         console.log('err');
       });
 
-    $scope.shareViaTwitter = function (prodetail) {
+  $scope.shareViaTwitter = function (prodetail) {
       $cordovaSocialSharing.shareViaTwitter(prodetail.name, prodetail.image)
         .then(function (result) {
 
@@ -68,16 +66,12 @@ angular.module('product.controllers', [])
         }, function (err) {
           alert('Por favor instalar a Aplicação Facebook');
         });
-    }
-
-  }
+    };
     $ionicModal.fromTemplateUrl('modal.html', function($ionicModal) {
       $scope.modal = $ionicModal;
     }, {
       scope: $scope,
       animation: 'slide-in-right'
     });
-
-  productDetail();
 
 });
