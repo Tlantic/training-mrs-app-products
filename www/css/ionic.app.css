@@ -9742,25 +9742,36 @@ h1.welcome-text {
 ion-content .product-detail-container {
   background-color: white; }
 
-button.intro-prod, .intro-promo {
+.intro-prod {
+  padding: 5px 20px; }
+
+.intro-promo {
+  padding: 5px 10px; }
+
+.intro-prod, .intro-promo {
   font-size: 2em;
+  font-family: "Fira Sans", sans-serif;
+  margin-top: 25px;
   color: #2E9FC2;
-  font-weight: 600;
+  font-weight: 500;
   background-color: white;
   border-radius: 8px;
-  padding: 5px 10px;
-  margin-top: 10px;
-  border: none; }
+  border: none;
+  -webkit-animation: button_intro 5s infinite linear;
+  animation: button_intro 5s infinite linear; }
 
 .ion-ios-cart-outline {
   font-size: 12em;
-  color: white; }
+  color: white;
+  margin-top: 30px; }
 
-.logo-text {
+h1.logo-text {
   font-family: "Righteous", "Arial", sans-serif;
   font-size: 5em;
   font-weight: 500;
-  color: #1D647A; }
+  color: #1D647A;
+  -webkit-animation: logo 2s infinite;
+  animation: logo 2s infinite; }
 
 .product-promo-price {
   color: black; }
@@ -9815,7 +9826,7 @@ h5.product-detail-price {
   background-color: #037A67; }
 
 h5.product-price {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: white;
   background-color: #037A67; }
 
@@ -9860,66 +9871,93 @@ h2.partilha {
     font-weight: 300;
     font-size: 1.1em; }
 
-i.ion-android-arrow-down::before {
-  width: 50px; }
+div .container > a, div > i, div > h1 {
+  display: block;
+  text-align: center; }
 
 i.ion-android-arrow-down {
-  font-size: 4em;
+  font-size: 3.5em;
   color: white;
   position: relative;
   left: 50%;
   width: 50px;
+  height: 50px;
   margin-left: -25px;
+  min-height: 0 !important;
+  min-width: 0 !important;
+  padding: 0;
   background-color: #2E9FC2;
-  -webkit-animation: flash 2s ease-out;
-  -moz-animation: flash 2s ease-out;
-  animation: flash 2s ease-out;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  border-radius: 24px; }
+  border-radius: 25px; }
+
+i.ion-android-arrow-down {
+  -webkit-animation: arrow-down 2s infinite ease-out;
+  animation: arrow-down 2s infinite ease-out; }
+
+.platform-android4_4 .ion-android-arrow-down {
+  -webkit-animation: arrow-down_4_4 2s infinite ease-out;
+  animation: arrow-down_4_4 2s infinite ease-out; }
 
 hr {
   visibility: hidden;
   margin: 0; }
 
-@-moz-keyframes flash {
+@-webkit-keyframes arrow-down {
   0% {
-    -moz-transform: initial;
+    -webkit-transform: scale(0);
     opacity: 0.2; }
   25% {
-    -moz-transform: initial;
+    -webkit-transform: scale(0.8);
     opacity: 0.2; }
   50% {
-    -moz-transform: initial;
+    -webkit-transform: scale(0.5);
     opacity: 0.5; }
   75% {
-    -moz-transform: initial;
+    -webkit-transform: scale(0.8);
     opacity: 0.8; }
   100% {
-    -moz-transform: initial;
+    -webkit-transform: scale(1);
     opacity: 0.2; } }
 
-@-webkit-keyframes flash {
+@keyframes arrow-down {
   0% {
-    -webkit-transform: initial;
+    -webkit-transform: scale(0);
     opacity: 0.2; }
   25% {
-    -webkit-transform: initial;
+    -webkit-transform: scale(0.8);
     opacity: 0.2; }
   50% {
-    -webkit-transform: initial;
+    -webkit-transform: scale(0.5);
     opacity: 0.5; }
   75% {
-    -webkit-transform: initial;
+    -webkit-transform: scale(0.8);
     opacity: 0.8; }
   100% {
-    -webkit-transform: initial;
+    -webkit-transform: scale(1);
     opacity: 0.2; } }
 
-div .container > a, div > i, div > h1 {
-  display: block;
-  text-align: center; }
+@-webkit-keyframes arrow-down_4_4 {
+  0% {
+    opacity: 0.2; }
+  25% {
+    opacity: 0.2; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.8; }
+  100% {
+    opacity: 0.2; } }
+
+@keyframes arrow-down_4_4 {
+  0% {
+    opacity: 0.2; }
+  25% {
+    opacity: 0.2; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.8; }
+  100% {
+    opacity: 0.2; } }
 
 .slide-in-right {
   -webkit-transform: translateX(100%);
@@ -9948,9 +9986,8 @@ img {
   img.product-image-detail-modal {
     max-width: 300px;
     margin-top: 100px;
-    -webkit-animation: modal_anim 3s forwards;
-    -moz-animation: modal_anim 3s forwards;
-    animation: modal_anim 3s forwards; }
+    -webkit-animation: modal_anim 2s;
+    animation: modal_anim 2s; }
   img.product-image-promo {
     max-width: 100px; }
 
@@ -10048,3 +10085,33 @@ button.ion-social-twitter, button.ion-social-facebook {
   100% {
     color: white;
     transform: translateY(0%); } }
+
+@-webkit-keyframes logo {
+  0% {
+    -webkit-text-stroke: 2px #59c2fe; }
+  25% {
+    -webkit-text-stroke: 2px #59c2fe; }
+  50% {
+    -webkit-text-stroke: 2px white; }
+  75% {
+    -webkit-text-stroke: 2px #59c2fe; }
+  100% {
+    -webkit-text-stroke: 2px white; } }
+
+@-webkit-keyframes button_intro {
+  0%, 35% {
+    -webkit-transform: rotate(0deg); }
+  45%, 46% {
+    -webkit-transform: rotate(15deg); }
+  55%, 56% {
+    -webkit-transform: rotate(-15deg); }
+  75%, 100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-webkit-keyframes modal_anim {
+  0% {
+    -webkit-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(2); }
+  100% {
+    -webkit-transform: scale(1); } }
