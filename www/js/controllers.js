@@ -20,19 +20,24 @@ angular.module('product.controllers', [])
 })
 
 .controller('ProductCtrl', function ($scope, $http, $stateParams, $ionicLoading, constants, productService){
+
+  $scope.pro = [];
   $scope.noMoreItemsAvailable = false;
   var from = 0;
+
   $scope.loadMore = function (){
     $ionicLoading.show({template: 'Carregando...'});
     productService.getAllProducts(from).then(function(response) {
       from += 10;
-      if (response.length == []) {
+      if (response.length == 0) {
         $scope.noMoreItemsAvailable = true;
       }
-      $scope.pro = response;
+      $scope.pro = $scope.pro.concat(response);
       $scope.$broadcast('scroll.infiniteScrollComplete');
       $ionicLoading.hide();
+
     });
+
   };
 
   $scope.$on('$stateChangeSuccess', function(){
