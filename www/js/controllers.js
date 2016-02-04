@@ -19,7 +19,7 @@ angular.module('product.controllers', [])
   });
 })
 
-.controller('ProductCtrl', function ($scope, $http, $stateParams, $ionicLoading, constants, productService){
+.controller('ProductCtrl', function ($scope, $http, $stateParams, $ionicLoading, constants,productService){
 
   $scope.pro = [];
   $scope.noMoreItemsAvailable = false;

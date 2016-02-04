@@ -1,8 +1,4 @@
-angular.module('product', ['product.controllers', 'product.services', 'product.directives','ngCordova', 'barcodeGenerator', 'dcbImgFallback', 'ionic'])
-  .constant('constants',{
-    URL_MONTESERRAT: 'http://52.17.194.187/orgs/monteserrat/apps/customer/',
-    ADAPTER_MONTERRAT:'?adapter=customer-adapter'
-  })
+angular.module('product', ['product.constants','product.controllers', 'product.services', 'product.directives','ngCordova', 'barcodeGenerator', 'dcbImgFallback', 'ionic'])
   .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
 

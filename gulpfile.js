@@ -6,6 +6,9 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var fs = require('fs');
+var replace = require('gulp-replace-task');
+var args = require('yargs').argv;
 
 var paths = {
   sass: ['./scss/**/*.scss']
@@ -48,4 +51,23 @@ gulp.task('git-check', function(done) {
     process.exit(1);
   }
   done();
+});
+
+gulp.task('replace', function () {
+
+  var env = args.env || 'localdev';
+
+  var filename = env + '.json';
+  var settings = JSON.parse(fs.readFileSync('./config/' + filename, 'utf8'));
+
+  gulp.src('./www/js/constants.js')
+    .pipe(replace({
+      patterns: [
+        {
+          match: 'endpoint',
+          replacement: settings.endpoint
+        }
+      ]
+    }))
+    .pipe(gulp.dest('./www/js/constants'));
 });

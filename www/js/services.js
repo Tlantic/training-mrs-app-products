@@ -1,10 +1,10 @@
-angular.module('product.services', [])
-  .factory('productService',['$http','$q','constants','$stateParams',function($http, $q,constants, $stateParams) {
+angular.module('product.services',[])
+  .factory('productService',['$http','$q','constants','$stateParams',function($http, $q, constants, $stateParams) {
     var productService = {};
 
     productService.getAllCategories = function () {
       var deferred = $q.defer();
-      $http.get(constants.URL_MONTESERRAT + 'hierarchicalstructure/1' + constants.ADAPTER_MONTERRAT)
+      $http.get(constants.endpoint + 'hierarchicalstructure/1?adapter=customer-adapter')
         .success(function (response) {
           deferred.resolve(response.result);
 
@@ -16,7 +16,7 @@ angular.module('product.services', [])
 
     productService.getAllProducts = function(from) {
       var deferred = $q.defer();
-      $http.get(constants.URL_MONTESERRAT + 'hierarchicalstructure/' + $stateParams.id + '/products' + constants.ADAPTER_MONTERRAT + '&from=' + from + '&size=10')
+      $http.get(constants.endpoint + 'hierarchicalstructure/' + $stateParams.id + '/products?adapter=customer-adapter&from=' + from + '&size=10')
         .success(function (response) {
           deferred.resolve(response.result);
 
@@ -28,7 +28,7 @@ angular.module('product.services', [])
 
     productService.getAllPromotions = function() {
       var deferred = $q.defer();
-      $http.get(constants.URL_MONTESERRAT + '/hierarchicalstructure/1.011/products'+ constants.ADAPTER_MONTERRAT +'&from=60&size=10')
+      $http.get(constants.endpoint + '/hierarchicalstructure/1.011/products?adapter=customer-adapter&from=60&size=10')
         .success(function (response) {
           deferred.resolve(response.result);
 
@@ -41,7 +41,7 @@ angular.module('product.services', [])
     productService.getAllProductsDetails = function() {
 
     var deferred = $q.defer();
-      $http.get(constants.URL_MONTESERRAT + 'products/' + $stateParams.id + constants.ADAPTER_MONTERRAT)
+      $http.get(constants.endpoint + 'products/' + $stateParams.id + '?adapter=customer-adapter')
       .success(function (response) {
         deferred.resolve(response.result);
 
